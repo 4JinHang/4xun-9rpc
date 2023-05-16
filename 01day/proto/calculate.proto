@@ -1,0 +1,17 @@
+syntax = "proto3";
+package pb;
+
+message CalculateRequest {
+  int32 x = 1;
+  int32 y = 2;
+}
+message CalculteResponse {
+  int32 result = 1;
+}
+
+service CalculateService {
+  rpc Addition(CalculateRequest) returns (CalculteResponse);
+  rpc Subtraction(CalculateRequest) returns (CalculteResponse);
+  rpc Multiplication(CalculateRequest) returns (CalculteResponse);
+  rpc Division(CalculateRequest) returns (CalculteResponse);
+}
